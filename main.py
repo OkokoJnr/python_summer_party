@@ -1,0 +1,15 @@
+import pandas as pd
+# Define the dataset
+data = {
+    'group_id': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    'created_date': [
+        '2024-10-01', '2024-10-10', '2024-11-05', '2024-10-15',
+        '2024-12-01', '2024-10-20', '2024-10-25', '2024-11-10',
+        '2024-10-30', '2024-12-15', '2024-10-05', '2024-10-12'
+    ],
+    'total_messages': [100, 200, 150, 500, 120, 300, 400, 220, 450, 80, 600, 50],
+    'participant_count': [25, 55, 40, 100, 35, 50, 60, 45, 80, 15, 90, 10]
+}
+# Create the DataFrame
+whatsapp_group = pd.DataFrame(data)
+print(whatsapp_group)
