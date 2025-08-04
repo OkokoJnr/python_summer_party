@@ -13,3 +13,5 @@ data = {
 # Create the DataFrame
 whatsapp_group = pd.DataFrame(data)
 print(whatsapp_group)
+
+# DAY ONE - You are a Product Analyst on the WhatsApp team investigating group messaging dynamics. Your team wants to understand how large groups are being used and their messaging patterns. You'll leverage data to uncover insights about group participation and communication behaviors.
