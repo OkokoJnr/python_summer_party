@@ -23,4 +23,8 @@ october_2024_groups = whatsapp_group[(whatsapp_group['created_date'].dt.year == 
         #TASK 2: What is the average number of participants in WhatsApp groups that were created in October 2024? This number will indicate the typical group size and inform our group messaging feature considerations.
         
 october_2024_groups_avg = october_2024_groups['participant_count'].mean()
-print(october_2024_groups_avg)
+
+
+        #TASK 3: For WhatsApp groups with more than 50 participants that were created in October 2024, what is the average number of messages sent? This insight will help assess engagement in larger groups and support recommendations for group messaging features.
+avg_messages_large_groups = october_2024_groups[october_2024_groups['participant_count'] > 50]['total_messages'].mean()
+print(avg_messages_large_groups)        
