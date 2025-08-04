@@ -15,3 +15,9 @@ whatsapp_group = pd.DataFrame(data)
 print(whatsapp_group)
 
 # DAY ONE - You are a Product Analyst on the WhatsApp team investigating group messaging dynamics. Your team wants to understand how large groups are being used and their messaging patterns. You'll leverage data to uncover insights about group participation and communication behaviors.
+
+#TASK 1: DETERMINE WHATSAPP GROUP CREATED IN OCTOBER 2024
+# Convert 'created_date' to datetime
+whatsapp_group['created_date'] = pd.to_datetime(whatsapp_group['created_date'])
+october_2024_groups = whatsapp_group[(whatsapp_group['created_date'].dt.year == 2024) & (whatsapp_group['created_date'].dt.month == 10)]
+
