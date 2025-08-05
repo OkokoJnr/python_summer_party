@@ -43,6 +43,16 @@ electronics_prdt_oct_2024_ads['ctr'] = (electronics_prdt_oct_2024_ads['clicks'] 
 # Group by product category and calculate the average CTR
 electronics_prdt_oct_2024_ads_avg = electronics_prdt_oct_2024_ads.groupby('product_category')['ctr'].mean().reset_index()   
 
+#TASK 2:    Which product categories have a CTR greater than the aggregated overall average CTR for sponsored product ads during October 2024? This analysis will identify high-performing categories for further optimization. For this question, we want to calculate CTR for each ad, then get the average across ads by product category & overall.
 
-
-print(electronics_prdt_oct_2024_ads_avg)
+# Calculate   CTR for October 2024
+oct_2024_ads['ctr'] = (oct_2024_ads['clicks'] / oct_2024_ads['impressions']) * 100
+# Calculate the overall average CTR for October 2024
+overall_avg_ctr = oct_2024_ads['ctr'].mean()
+# merge the ads with product categories
+oct_2024_ads = pd.merge(oct_2024_ads, dim_product, on='product_id')
+#calculate the average CTR by product category
+prdt_category_ctr_avg = oct_2024_ads.groupby('product_category')['ctr'].mean().reset_index()
+# Identify product categories with CTR greater than the overall average
+higher_avg_prdt_actegory = prdt_category_ctr_avg[prdt_category_ctr_avg['ctr'] > overall_avg_ctr]
+print(higher_avg_prdt_actegory)
